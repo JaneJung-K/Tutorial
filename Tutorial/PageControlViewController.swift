@@ -211,6 +211,7 @@ class PageControlTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         }
     }
     
+    //스크롤이 끝나면 다른 셀들은 다시 원위치 시킨다.
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             self.pageCollectionView.scrollToNearestVisibleCollectionViewCell()
@@ -249,11 +250,13 @@ extension UICollectionView {
                 closestCellIndex = self.indexPath(for: cell)!.row
             }
         }
+        // 가운데 오는 셀의 위치를 위로 살짝 올려준다. scale을 이용할 때는 -16 지워주기
         if closestCellIndex != -1 {
             let index = IndexPath(row: closestCellIndex, section: 0)
             self.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
             let cell = self.cellForItem(at: index)!
-            cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y-16, width: cell.frame.width, height: cell.frame.height)
+//            cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y-16, width: cell.frame.width, height: cell.frame.height)
+            cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height)
     
         }
     }

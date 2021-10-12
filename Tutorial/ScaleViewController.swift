@@ -174,11 +174,6 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    override func prepareForReuse() {
-        
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return increasedData1.count
     }
@@ -213,16 +208,16 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if collectionView == collectionView1 {
-            cell.alpha = 0
-                UIView.animate(withDuration: 0.8) {
-                    cell.alpha = 1
-                }
-            return
-        }
-       
-    }
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if collectionView == collectionView1 {
+//            cell.alpha = 0
+//                UIView.animate(withDuration: 0.8) {
+//                    cell.alpha = 1
+//                }
+//            return
+//        }
+//
+//    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if collectionView1.getInt() > increasedData1.count - 2 {
@@ -302,18 +297,18 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
             
                guard let collectionView = self.collectionView else { return }
 
-//               let collectionViewCenter = collectionView.frame.size.width / 2
-//               let offsetX = collectionView.contentOffset.x
-//               let center = attributes.center.x - offsetX
+               let collectionViewCenter = collectionView.frame.size.width / 2
+               let offsetX = collectionView.contentOffset.x
+               let center = attributes.center.x - offsetX
+
+               let maxDis = self.itemSize.width + self.minimumLineSpacing
+               let dis = min(abs(collectionViewCenter-center), maxDis)
+
+               let ratio = (maxDis - dis)/maxDis
+               let scale = ratio * (1-0.7) + 0.7
 //
-//               let maxDis = self.itemSize.width + self.minimumLineSpacing
-//               let dis = min(abs(collectionViewCenter-center), maxDis)
-//
-//               let ratio = (maxDis - dis)/maxDis
-//               let scale = ratio * (1-0.7) + 0.7
-//
-//            attributes.transform = CGAffineTransform(scaleX: scale, y: scale)
-            attributes.transform = CGAffineTransform(translationX: 0, y: 0)
+            attributes.transform = CGAffineTransform(scaleX: scale, y: scale)
+//            attributes.transform = CGAffineTransform(translationX: 0, y: 0)
 //            attributes.transform = CGAffineTransform(rotationAngle: .pi)
 //            attributes.frame = CGRect(x: attributes.frame.origin.x, y: attributes.frame.origin.y-16, width: attributes.frame.width, height: attributes.frame.height)
           

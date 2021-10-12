@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = ScaleViewController()
+        
+        //여기서 ViewController를 변경해준다.
+        window.rootViewController = CalendarViewController()
         self.window = window
         self.window?.makeKeyAndVisible()
     }

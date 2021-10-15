@@ -8,7 +8,12 @@
 import UIKit
 
 // 수평 스크롤 되는 DatePicker Calendar
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
+    
     //MARK: - Property
     
     private var calendarDayArray:[String]?
@@ -84,7 +89,11 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
+      let pvc = PageControlViewController()
+        pvc.modalPresentationStyle = .custom
+        pvc.transitioningDelegate = self
+        
+        present(pvc, animated: true, completion: nil)
     }
 }
 
@@ -145,8 +154,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
 }
 
+// MARK: -CalendarModel
+
 struct CalendarModel {
-    
     static let shared = CalendarModel()
     
     // 달력의 시작 날짜

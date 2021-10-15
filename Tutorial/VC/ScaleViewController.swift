@@ -208,17 +208,6 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if collectionView == collectionView1 {
-//            cell.alpha = 0
-//                UIView.animate(withDuration: 0.8) {
-//                    cell.alpha = 1
-//                }
-//            return
-//        }
-//
-//    }
-    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if collectionView1.getInt() > increasedData1.count - 2 {
             collectionView1.scrollToItem(at: IndexPath(item: originalDataSouceCount*2, section: .zero),
@@ -238,6 +227,10 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
                                                 animated: false)
             return
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

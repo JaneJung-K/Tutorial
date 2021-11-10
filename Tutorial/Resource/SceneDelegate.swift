@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         
         //여기서 ViewController를 변경해준다.
-        window.rootViewController = CalendarViewController()
+        window.rootViewController = PageViewController()
         self.window = window
         self.window?.makeKeyAndVisible()
     }

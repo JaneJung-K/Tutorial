@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         
         //여기서 ViewController를 변경해준다.
-        window.rootViewController = PageViewController()
+        window.rootViewController = ProgressViewWithPanGestureViewController()
         self.window = window
         self.window?.makeKeyAndVisible()
     }

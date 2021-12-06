@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084A4FE2275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A4FE1275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift */; };
 		086C2B49270C0A290028022B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086C2B47270C0A290028022B /* Main.storyboard */; };
 		086C2B4B270C0A2A0028022B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086C2B4A270C0A2A0028022B /* Assets.xcassets */; };
 		086C2B4E270C0A2A0028022B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086C2B4C270C0A2A0028022B /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		084A4FE1275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewWithPanGestureViewController.swift; sourceTree = "<group>"; };
 		086C2B3E270C0A280028022B /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C2B48270C0A290028022B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		086C2B4A270C0A2A0028022B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084A4FE3275DC81F00DB2DBF /* VerticalProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				084A4FE1275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift */,
+			);
+			path = VerticalProgressView;
+			sourceTree = "<group>";
+		};
 		086C2B35270C0A280028022B = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 				087FC87427191DFB006B50EA /* HalfSizePresentationController.swift */,
 				08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */,
 				08A431E7273BA90200C898F8 /* New Group */,
+				084A4FE3275DC81F00DB2DBF /* VerticalProgressView */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				086C2B5A270C0C140028022B /* PageControlViewController.swift in Sources */,
 				08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */,
 				087FC87527191DFB006B50EA /* HalfSizePresentationController.swift in Sources */,
+				084A4FE2275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift in Sources */,
 				086C2B5B270C0C140028022B /* ScaleViewController.swift in Sources */,
 				086C2B5C270C0C140028022B /* Fonts.swift in Sources */,
 			);
@@ -408,6 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G94TUA364T;
 				INFOPLIST_FILE = "$(SRCROOT)/Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,6 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G94TUA364T;
 				INFOPLIST_FILE = "$(SRCROOT)/Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

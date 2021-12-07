@@ -89,10 +89,8 @@ class ProgressViewWithPanGestureViewController: UIViewController {
 
 extension ProgressViewWithPanGestureViewController: UIGestureRecognizerDelegate {
     
-    
     func setupGesture() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        
         
         touchArea.addGestureRecognizer(panGestureRecognizer)
     }

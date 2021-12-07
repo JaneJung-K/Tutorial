@@ -21,6 +21,8 @@
 		08A431E6273BA89100C898F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A431E5273BA89100C898F8 /* ViewController.swift */; };
 		08A431E9273BA90F00C898F8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A431E8273BA90F00C898F8 /* PageViewController.swift */; };
 		08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */; };
+		08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */; };
+		08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */; };
 		0925F27A72DC9974527B2EC1 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		08A431E5273BA89100C898F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08A431E8273BA90F00C898F8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCastScheduleViewController.swift; sourceTree = "<group>"; };
+		08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionViewController.swift; sourceTree = "<group>"; };
+		08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionCell.swift; sourceTree = "<group>"; };
 		47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFA875089273EFD4052C129 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		F42658B0DDF50D2081D18490 /* Pods-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.debug.xcconfig"; path = "Target Support Files/Pods-Tutorial/Pods-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */,
 				08A431E7273BA90200C898F8 /* New Group */,
 				084A4FE3275DC81F00DB2DBF /* VerticalProgressView */,
+				08AC9243275F4BE00016ECAB /* DynamicCollectionView */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -128,6 +133,15 @@
 				08A431E8273BA90F00C898F8 /* PageViewController.swift */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		08AC9243275F4BE00016ECAB /* DynamicCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */,
+				08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */,
+			);
+			path = DynamicCollectionView;
 			sourceTree = "<group>";
 		};
 		6E90063AC4CF6CC404C75B18 /* Pods */ = {
@@ -270,7 +284,9 @@
 				08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */,
 				087FC87527191DFB006B50EA /* HalfSizePresentationController.swift in Sources */,
 				084A4FE2275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift in Sources */,
+				08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */,
 				086C2B5B270C0C140028022B /* ScaleViewController.swift in Sources */,
+				08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */,
 				086C2B5C270C0C140028022B /* Fonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

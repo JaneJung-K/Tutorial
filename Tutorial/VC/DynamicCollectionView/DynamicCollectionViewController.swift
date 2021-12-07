@@ -8,6 +8,13 @@
 import UIKit
 import SnapKit
 
+/*
+ 주의점
+ 1. titleLabel.numberOfLines = 0
+ 2. return CollectionViewCell.fittingSize(availableWidth: view.frame.width-20, name: items[indexPath.item])
+ 넓이에서 인셋만큼 빼주기
+ */
+
 final class DynamicCollectionViewController: UIViewController {
 
     private lazy var collectionView: UICollectionView = {

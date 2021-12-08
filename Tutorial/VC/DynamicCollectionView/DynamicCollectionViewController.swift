@@ -8,20 +8,18 @@
 import UIKit
 import SnapKit
 
-/*
- 주의점
- 1. titleLabel.numberOfLines = 0
- 2. return CollectionViewCell.fittingSize(availableWidth: view.frame.width-20, name: items[indexPath.item])
- 넓이에서 인셋만큼 빼주기
- */
+struct Message {
+    var nick: String
+    var text: String
+}
 
 final class DynamicCollectionViewController: UIViewController {
-
+    
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         
-        flowLayout.minimumLineSpacing = 20
-        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.minimumLineSpacing = 3
+        flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -29,16 +27,21 @@ final class DynamicCollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         return collectionView
     }()
     
-    private let items: [String] = [
-        "안녕하세요 좋은 저녁입니다. 곧 있으면 퇴근을 할 수 있으니 너무 좋습니다. ",
-        "지금은 크리스마스를 앞두고 있습니다. 연말 분위기가 물씬나서 거리를 걷던 지하철 역을 가던 어디서든 크리스마스 트리를 볼 수 있습니다.",
-        "새로운 일을 시작하는 건 언제나 설레입니다. 잘될지 안될지 예측할 수 없고 함께하는 구성원 모두 알게 된지 얼마 되지 않았지만 다 같이 으쌰으쌰 해보겠습니다."
-       
+var items: [Message] = [
+                        Message(nick: "찌리릿차", text: "포르쉐는 911이지"),
+                        Message(nick: "베이지", text: "억~~~~~"),
+                        Message(nick: "포르쉐사자", text: "예약하고 가면 여성딜러분이 차 보여주시나요? 무서운남자 아닌데요요용"),
+                        Message(nick: "얍얍얍", text: "지짜 대박이다..."),
+                        Message(nick: "차란차별", text: "포르쉐는 카이엔..별"),
+                        Message(nick: "월간차", text: "이사님 여깁니다!!!"),
+                        Message(nick: "rlagusals", text: "30키로 탔는데 신차값보다 많이 떨어졌네요 살만하네요"),
+                        Message(nick: "월간차", text: "AMG 곳곳에서 존재감 뿜내는 거 보소"),
+                        Message(nick: "대한시연만세", text: "오")
     ]
     
     override func viewDidLoad() {
@@ -52,10 +55,10 @@ final class DynamicCollectionViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.snp.remakeConstraints { make in
             make.top.bottom.equalTo(view.safeAreaLayoutGuide)
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalToSuperview()
         }
     }
-    
 }
 
 extension DynamicCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -66,12 +69,12 @@ extension DynamicCollectionViewController: UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.configure(name: items[indexPath.item])
+        cell.configure(model: items[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CollectionViewCell.fittingSize(availableWidth: view.frame.width-20, name: items[indexPath.item])
+        return CollectionViewCell.fittingSize(availableWidth: 276, model: items[indexPath.item])
     }
     
 }

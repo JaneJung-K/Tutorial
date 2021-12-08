@@ -8,15 +8,31 @@ import UIKit
 
 final class CollectionViewCell: UICollectionViewCell {
     
-    static func fittingSize(availableWidth: CGFloat, name: String?) -> CGSize {
+    static func fittingSize(availableWidth: CGFloat, model: Message) -> CGSize {
         let cell = CollectionViewCell()
-        cell.configure(name: name)
+        cell.configure(model: model)
         
         let targetSize = CGSize(width: availableWidth, height:  UIView.layoutFittingCompressedSize.height)
         return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
     }
     
-    private let titleLabel: UILabel = UILabel()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+      label.textAlignment = .center
+      label.textColor = .black
+      label.numberOfLines = 0
+      
+        return label
+    }()
+    
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.numberOfLines = 0
+        
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,24 +46,31 @@ final class CollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = frame.height / 2
+        textLabel.sizeToFit()
     }
     
     private func setupView() {
-        backgroundColor = .black
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .white
-        titleLabel.numberOfLines = 0
-        titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        backgroundColor = .black.withAlphaComponent(0.1)
         
         contentView.addSubview(titleLabel)
+        contentView.addSubview(textLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(15)
+            make.top.left.equalToSuperview()
+        }
+        textLabel.snp.makeConstraints { make in
+//            make.top.equalTo(titleLabel)
+            make.left.equalTo(titleLabel.snp.right).offset(10)
+//           make.top.left.equalToSuperview()
+//            make.width.equalTo(textLabel.frame.width)
+//            make.height.equalTo(textLabel.frame.height)
+            make.right.top.bottom.equalToSuperview()
         }
     }
     
-    func configure(name: String?) {
-        titleLabel.text = name
+    func configure(model: Message) {
+        titleLabel.text = model.nick
+        textLabel.text = model.text
+        
     }
-    
+
 }

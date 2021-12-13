@@ -30,7 +30,7 @@ final class CollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
-        
+//        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -47,6 +47,7 @@ final class CollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         textLabel.sizeToFit()
+        titleLabel.sizeToFit()
     }
     
     private func setupView() {
@@ -63,6 +64,7 @@ final class CollectionViewCell: UICollectionViewCell {
 //           make.top.left.equalToSuperview()
 //            make.width.equalTo(textLabel.frame.width)
 //            make.height.equalTo(textLabel.frame.height)
+//            make.width.greaterThanOrEqualTo(100)
             make.right.top.bottom.equalToSuperview()
         }
     }

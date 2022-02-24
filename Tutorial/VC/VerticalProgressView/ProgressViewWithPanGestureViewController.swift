@@ -126,7 +126,16 @@ extension ProgressViewWithPanGestureViewController: UIGestureRecognizerDelegate 
                     let intA = Int(newValue * 100)
                     
                     progressView.setProgress(newValue, animated: true)
-                    labelVolume.text = String(intA)
+                    if intA < 0 {
+                        labelVolume.text = "0"
+                    }
+                    else if intA > 100 {
+                        labelVolume.text = "100"
+                    }
+                    else {
+                        labelVolume.text = String(intA)
+                    }
+                    
 
                     sender.setTranslation(.zero, in: touchArea)
                 }

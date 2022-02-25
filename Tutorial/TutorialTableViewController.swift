@@ -11,12 +11,8 @@ class TutorialTableViewController: UITableViewController {
     
     let items: [(String, UIViewController)] = [
         ("CalendarViewController", CalendarViewController()),
-//        ("PageControlViewController", PageControlViewController()),
         ("ScaleViewController", ScaleViewController()),
-//        ("CalendarCastScheduleViewController", CalendarCastScheduleViewController()),
-//        ("PageViewController", PageViewController()),
         ("ProgressViewWithPanGestureViewController",ProgressViewWithPanGestureViewController()),
-//        ("DynamicCollectionViewController", DynamicCollectionViewController())
     ]
     
     override func viewDidLoad() {

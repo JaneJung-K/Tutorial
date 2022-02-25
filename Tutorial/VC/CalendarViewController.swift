@@ -10,10 +10,6 @@ import UIKit
 // 수평 스크롤 되는 DatePicker Calendar
 class CalendarViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
-    }
-    
     //MARK: - Property
     
     private var calendarDayArray:[String]?

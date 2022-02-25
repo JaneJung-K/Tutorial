@@ -9,13 +9,57 @@ import UIKit
 
 class ScaleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var tableView: UITableView!
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
+        
+        tableView.frame = view.bounds
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.showsVerticalScrollIndicator = false
+        
+        return tableView
+    }()
     private var cell = FirstTableViewCell()
+    
+    private let gradient = CAGradientLayer()
+    
+    private var _button: UIButton = {
+        let button = UIButton()
+        button.setTitle("방송보기", for: .normal)
+        button.titleLabel?.font = Fonts.text14()
+        button.setTitleColor(.label, for: .normal)
+        button.layer.cornerRadius = 20
+        button.frame = CGRect(x: 0, y: 0, width: 135, height: 40)
+        button.addTarget(self, action: #selector(didTapWatch), for: .touchUpInside)
+        return button
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTableView()
+        gradient.frame = _button.bounds
+        gradient.colors = [UIColor.black.withAlphaComponent(0).cgColor, UIColor.black.withAlphaComponent(0.8).cgColor]
+        view.addSubview(tableView)
+        view.addSubview(_button)
+
+        _button.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(112)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(90)
+            make.width.equalTo(135)
+            make.height.equalTo(40)
+        }
+
+        _button.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    @objc func didTapWatch() {
+        let vc = TutorialTableViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -24,21 +68,6 @@ class ScaleViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.collectionView1.scrollToItem(at: IndexPath(item: 5, section: 0), at: .centeredHorizontally, animated: false)
         cell.collectionView2.scrollToItem(at: IndexPath(item: 5, section: 0), at: .centeredHorizontally, animated: false)
         
-        tableView.frame = view.bounds
-
-    }
-    
-    func setUpTableView() {
-        let tableView = UITableView()
-        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
-        view.addSubview(tableView)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.showsVerticalScrollIndicator = false
-        
-        self.tableView = tableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +82,10 @@ class ScaleViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
@@ -83,18 +116,6 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
     private var scrollToEnd: Bool = false
     private var scrollToBegin: Bool = false
     
-    private let gradient = CAGradientLayer()
-    
-    private var _button: UIButton = {
-        let button = UIButton()
-        button.setTitle("방송보기", for: .normal)
-        button.titleLabel?.font = Fonts.text14()
-        button.setTitleColor(.label, for: .normal)
-        button.layer.cornerRadius = 20
-        button.frame = CGRect(x: 0, y: 0, width: 135, height: 40)
-        return button
-    }()
-    
     private var image: UIImageView {
         let image = UIImageView()
         image.backgroundColor = .red
@@ -107,20 +128,6 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpCollectionView1()
         setUpCollectionView2()
-        
-        gradient.frame = _button.bounds
-        gradient.colors = [UIColor.black.withAlphaComponent(0).cgColor, UIColor.black.withAlphaComponent(0.8).cgColor]
-        
-        contentView.addSubview(_button)
-
-        _button.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(112)
-            make.bottom.equalTo(collectionView2.snp.bottom).offset(50)
-            make.width.equalTo(135)
-            make.height.equalTo(40)
-        }
-
-        _button.layer.insertSublayer(gradient, at: 0)
     }
     
     func setUpCollectionView1() {

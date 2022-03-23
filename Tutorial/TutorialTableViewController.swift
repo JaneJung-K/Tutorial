@@ -10,9 +10,12 @@ import UIKit
 class TutorialTableViewController: UITableViewController {
     
     let items: [(String, UIViewController)] = [
+        ("HorizontalStickyHeaderLayout", HorizontalStickyHeaderViewController()),
+        ("LottieTestViewController", LottieTestViewController()),
         ("CalendarViewController", CalendarViewController()),
         ("ScaleViewController", ScaleViewController()),
-        ("ProgressViewWithPanGestureViewController",ProgressViewWithPanGestureViewController()),
+        ("ProgressViewWithPanGestureViewController",ProgressViewWithPanGestureViewController())
+        
     ]
     
     override func viewDidLoad() {
@@ -37,5 +40,4 @@ class TutorialTableViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 

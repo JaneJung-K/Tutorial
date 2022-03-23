@@ -8,5 +8,7 @@ target 'Tutorial' do
   # Pods for MutipleCollectionViewExample
 
 pod 'SnapKit'
+pod 'lottie-ios'
+pod 'HorizontalStickyHeaderLayout'
 
 end

@@ -17,12 +17,12 @@ class HorizontalStickyHeaderViewController: UIViewController {
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
+        layout.sectionHeadersPinToVisibleBounds = true
         layout.itemSize = CGSize(width: 300, height: 200)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-//        collectionView.register(HeaderView.self, forCellWithReuseIdentifier: "headercell")
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headercell")
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -38,7 +38,7 @@ class HorizontalStickyHeaderViewController: UIViewController {
         
         collectionView.snp.makeConstraints { make in
             make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(500)
+            make.height.equalTo(250)
         }
     }
     // 2. header 만들기
@@ -53,63 +53,65 @@ extension HorizontalStickyHeaderViewController: UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = colorBackground[indexPath.row]
+        if indexPath.row == 3 {
+            cell.backgroundColor = .clear
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headercell", for: indexPath) as! HeaderView
-        
+        let title:[String] = ["첫번째", "두번째", "세번째"]
+        headerView.configure(text: title[indexPath[0]])
         return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-       return CGSize(width: 200, height: 200)
+        return CGSize(width: 200, height: 200)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 50, left: -200, bottom: 0, right: 0)
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if indexPath.row == 3 {
+//            return CGSize(width: 16, height: 200)
+//        }
+//        return CGSize(width: 300, height: 200)
+//    }
 }
 
 class HeaderView: UICollectionReusableView {
+    private lazy var lblTitle: UILabel = {
+       let label = UILabel()
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        backgroundColor = .green
+        backgroundColor = .clear
+        addSubview(lblTitle)
+        lblTitle.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(50)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func configure(text: String) {
+        lblTitle.text = text
+    }
+    
     
 }
 
-extension HorizontalStickyHeaderViewController: HorizontalStickyHeaderLayoutDelegate {
-    private enum Const {
-        static let headerSize = CGSize(width: 100, height: 38)
-        static let itemSize0  = CGSize(width: 50, height: 50)
-        static let itemSize1  = CGSize(width: 80, height: 80)
-        static let headerLeft: CGFloat = 8
-    }
-    func collectionView(_ collectionView: UICollectionView, hshlSizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        if indexPath.section % 2 == 0 {
-            return Const.itemSize0
-        } else {
-            return Const.itemSize1
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, hshlSizeForHeaderAtSection section: Int) -> CGSize {
-        return Const.headerSize
-    }
-    func collectionView(_ collectionView: UICollectionView, hshlHeaderInsetsAtSection section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: Const.headerLeft, bottom: 20, right: 20)
-    }
-    func collectionView(_ collectionView: UICollectionView, hshlMinSpacingForCellsAtSection section: Int) -> CGFloat {
-        return 20
-    }
-    func collectionView(_ collectionView: UICollectionView, hshlSectionInsetsAtSection section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: section == 4 ? 0 : 20)
-    }
-}

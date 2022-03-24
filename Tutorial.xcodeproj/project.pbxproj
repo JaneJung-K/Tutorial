@@ -23,7 +23,6 @@
 		08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */; };
 		08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */; };
 		0925F27A72DC9974527B2EC1 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */; };
-		A331D88527E06A56008DC2E8 /* dummyJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A331D88427E06A56008DC2E8 /* dummyJson.json */; };
 		A352361E27E067D400F828D2 /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352361D27E067D400F828D2 /* LottieTestViewController.swift */; };
 		A3D5A4EB27C74C07002EFF89 /* TutorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5A4EA27C74C07002EFF89 /* TutorialTableViewController.swift */; };
 		A3D8A87527EAE40000165845 /* HorizontalStickyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8A87427EAE40000165845 /* HorizontalStickyHeaderViewController.swift */; };
@@ -49,7 +48,6 @@
 		08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionCell.swift; sourceTree = "<group>"; };
 		47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFA875089273EFD4052C129 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
-		A331D88427E06A56008DC2E8 /* dummyJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummyJson.json; sourceTree = "<group>"; };
 		A352361D27E067D400F828D2 /* LottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestViewController.swift; sourceTree = "<group>"; };
 		A3D5A4EA27C74C07002EFF89 /* TutorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewController.swift; sourceTree = "<group>"; };
 		A3D8A87427EAE40000165845 /* HorizontalStickyHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStickyHeaderViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		086C2B55270C0B2D0028022B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A331D88427E06A56008DC2E8 /* dummyJson.json */,
 				086C2B6A270C0E960028022B /* AppDelegate.swift */,
 				086C2B6B270C0E960028022B /* SceneDelegate.swift */,
 				086C2B58270C0C130028022B /* Fonts.swift */,
@@ -239,7 +236,6 @@
 			files = (
 				086C2B4E270C0A2A0028022B /* LaunchScreen.storyboard in Resources */,
 				086C2B4B270C0A2A0028022B /* Assets.xcassets in Resources */,
-				A331D88527E06A56008DC2E8 /* dummyJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

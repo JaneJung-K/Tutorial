@@ -9,6 +9,6 @@ target 'Tutorial' do
 
 pod 'SnapKit'
 pod 'lottie-ios'
-pod 'HorizontalStickyHeaderLayout'
+#pod 'HorizontalStickyHeaderLayout'
 
 end

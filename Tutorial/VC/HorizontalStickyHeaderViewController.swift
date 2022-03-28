@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import HorizontalStickyHeaderLayout
 
 class HorizontalStickyHeaderViewController: UIViewController {
     let colorBackground: [UIColor] = [ .cyan, .red, .blue, .gray, .orange, .cyan, .red, .blue, .gray, .orange
@@ -38,12 +37,9 @@ class HorizontalStickyHeaderViewController: UIViewController {
         
         collectionView.snp.makeConstraints { make in
             make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(250)
+            make.height.equalTo(300)
         }
     }
-    // 2. header 만들기
-    // 3. collectionvivew section 나누기
-    // 4. section header 만들기
 }
 
 extension HorizontalStickyHeaderViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -59,9 +55,6 @@ extension HorizontalStickyHeaderViewController: UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = colorBackground[indexPath.row]
-        if indexPath.row == 3 {
-            cell.backgroundColor = .clear
-        }
         return cell
     }
     

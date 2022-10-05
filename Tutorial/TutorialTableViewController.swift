@@ -10,6 +10,7 @@ import UIKit
 class TutorialTableViewController: UITableViewController {
     
     let items: [(String, UIViewController)] = [
+        ("연락처 가져오기", ContactsViewController()),
         ("HorizontalStickyHeaderLayout", HorizontalStickyHeaderViewController()),
         ("LottieTestViewController", LottieTestViewController()),
         ("CalendarViewController", CalendarViewController()),

@@ -26,7 +26,7 @@ class ScaleViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let gradient = CAGradientLayer()
     
-    private var _button: UIButton = {
+    private lazy var _button: UIButton = {
         let button = UIButton()
         button.setTitle("방송보기", for: .normal)
         button.titleLabel?.font = Fonts.text14()

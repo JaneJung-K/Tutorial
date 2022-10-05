@@ -22,6 +22,9 @@
 		08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */; };
 		08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */; };
 		08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */; };
+		08DB26E528ED666400411D7C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26E428ED666400411D7C /* ContactsViewController.swift */; };
+		08DB26EA28ED67B500411D7C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26E928ED67B500411D7C /* Contact.swift */; };
+		08DB26EC28ED691D00411D7C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26EB28ED691D00411D7C /* DataManager.swift */; };
 		0925F27A72DC9974527B2EC1 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */; };
 		A352361E27E067D400F828D2 /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352361D27E067D400F828D2 /* LottieTestViewController.swift */; };
 		A3D5A4EB27C74C07002EFF89 /* TutorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5A4EA27C74C07002EFF89 /* TutorialTableViewController.swift */; };
@@ -46,6 +49,9 @@
 		08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCastScheduleViewController.swift; sourceTree = "<group>"; };
 		08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionViewController.swift; sourceTree = "<group>"; };
 		08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionCell.swift; sourceTree = "<group>"; };
+		08DB26E428ED666400411D7C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		08DB26E928ED67B500411D7C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		08DB26EB28ED691D00411D7C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		47806C3FEF3FC6B0CBA14E5C /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFA875089273EFD4052C129 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		A352361D27E067D400F828D2 /* LottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				086C2B40270C0A280028022B /* Tutorial */,
+				08DB26E628ED671C00411D7C /* Util */,
 				086C2B3F270C0A280028022B /* Products */,
 				6E90063AC4CF6CC404C75B18 /* Pods */,
 				9D74DD15C86EC00390B5DDAB /* Frameworks */,
@@ -119,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A331D88627E0701D008DC2E8 /* Lottie */,
+				08DB26E428ED666400411D7C /* ContactsViewController.swift */,
 				0899189C27152EF4005AE809 /* CalendarViewController.swift */,
 				086C2B56270C0C130028022B /* PageControlViewController.swift */,
 				086C2B57270C0C130028022B /* ScaleViewController.swift */,
@@ -148,6 +156,15 @@
 				08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */,
 			);
 			path = DynamicCollectionView;
+			sourceTree = "<group>";
+		};
+		08DB26E628ED671C00411D7C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				08DB26E928ED67B500411D7C /* Contact.swift */,
+				08DB26EB28ED691D00411D7C /* DataManager.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		6E90063AC4CF6CC404C75B18 /* Pods */ = {
@@ -289,9 +306,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0899189D27152EF4005AE809 /* CalendarViewController.swift in Sources */,
+				08DB26EC28ED691D00411D7C /* DataManager.swift in Sources */,
+				08DB26EA28ED67B500411D7C /* Contact.swift in Sources */,
 				08A431E9273BA90F00C898F8 /* PageViewController.swift in Sources */,
 				A352361E27E067D400F828D2 /* LottieTestViewController.swift in Sources */,
 				086C2B6D270C0E960028022B /* SceneDelegate.swift in Sources */,
+				08DB26E528ED666400411D7C /* ContactsViewController.swift in Sources */,
 				086C2B6C270C0E960028022B /* AppDelegate.swift in Sources */,
 				08A431E6273BA89100C898F8 /* ViewController.swift in Sources */,
 				086C2B5A270C0C140028022B /* PageControlViewController.swift in Sources */,

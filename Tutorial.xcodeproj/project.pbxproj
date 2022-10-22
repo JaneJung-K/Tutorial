@@ -24,6 +24,10 @@
 		08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */; };
 		08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */; };
 		08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */; };
+		08CE9FDE28FE41820011BFA0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CE9FDD28FE41820011BFA0 /* Setting.storyboard */; };
+		08CE9FE028FE418C0011BFA0 /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE9FDF28FE418C0011BFA0 /* QRCodeScanViewController.swift */; };
+		08CE9FE228FE42CA0011BFA0 /* QRCodeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE9FE128FE42CA0011BFA0 /* QRCodeBaseViewController.swift */; };
+		08D88CBD290489B600A89F17 /* NewQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D88CBC290489B600A89F17 /* NewQRScanViewController.swift */; };
 		08DB26E528ED666400411D7C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26E428ED666400411D7C /* ContactsViewController.swift */; };
 		08DB26EA28ED67B500411D7C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26E928ED67B500411D7C /* Contact.swift */; };
 		08DB26EC28ED691D00411D7C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB26EB28ED691D00411D7C /* DataManager.swift */; };
@@ -53,6 +57,10 @@
 		08AA93642726914500AC3F8C /* CalendarCastScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCastScheduleViewController.swift; sourceTree = "<group>"; };
 		08AC9241275F4B320016ECAB /* DynamicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionViewController.swift; sourceTree = "<group>"; };
 		08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionCell.swift; sourceTree = "<group>"; };
+		08CE9FDD28FE41820011BFA0 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		08CE9FDF28FE418C0011BFA0 /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
+		08CE9FE128FE42CA0011BFA0 /* QRCodeBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeBaseViewController.swift; sourceTree = "<group>"; };
+		08D88CBC290489B600A89F17 /* NewQRScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQRScanViewController.swift; sourceTree = "<group>"; };
 		08DB26E428ED666400411D7C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		08DB26E928ED67B500411D7C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		08DB26EB28ED691D00411D7C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		0899189E27152F15005AE809 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				08CE9FDC28FE41760011BFA0 /* QRScan */,
 				A331D88627E0701D008DC2E8 /* Lottie */,
 				0874A46528F9CEAE00B01B6D /* BioLoginViewController.swift */,
 				08DB26E428ED666400411D7C /* ContactsViewController.swift */,
@@ -162,6 +171,17 @@
 				08AC9244275F4C2A0016ECAB /* DynamicCollectionCell.swift */,
 			);
 			path = DynamicCollectionView;
+			sourceTree = "<group>";
+		};
+		08CE9FDC28FE41760011BFA0 /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				08CE9FDD28FE41820011BFA0 /* Setting.storyboard */,
+				08CE9FDF28FE418C0011BFA0 /* QRCodeScanViewController.swift */,
+				08CE9FE128FE42CA0011BFA0 /* QRCodeBaseViewController.swift */,
+				08D88CBC290489B600A89F17 /* NewQRScanViewController.swift */,
+			);
+			path = QRScan;
 			sourceTree = "<group>";
 		};
 		08DB26E628ED671C00411D7C /* Util */ = {
@@ -260,6 +280,7 @@
 			files = (
 				086C2B4E270C0A2A0028022B /* LaunchScreen.storyboard in Resources */,
 				086C2B4B270C0A2A0028022B /* Assets.xcassets in Resources */,
+				08CE9FDE28FE41820011BFA0 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,17 +336,20 @@
 				0899189D27152EF4005AE809 /* CalendarViewController.swift in Sources */,
 				08DB26EC28ED691D00411D7C /* DataManager.swift in Sources */,
 				08DB26EA28ED67B500411D7C /* Contact.swift in Sources */,
+				08CE9FE028FE418C0011BFA0 /* QRCodeScanViewController.swift in Sources */,
 				08A431E9273BA90F00C898F8 /* PageViewController.swift in Sources */,
 				A352361E27E067D400F828D2 /* LottieTestViewController.swift in Sources */,
 				086C2B6D270C0E960028022B /* SceneDelegate.swift in Sources */,
 				08DB26E528ED666400411D7C /* ContactsViewController.swift in Sources */,
 				086C2B6C270C0E960028022B /* AppDelegate.swift in Sources */,
 				08A431E6273BA89100C898F8 /* ViewController.swift in Sources */,
+				08D88CBD290489B600A89F17 /* NewQRScanViewController.swift in Sources */,
 				086C2B5A270C0C140028022B /* PageControlViewController.swift in Sources */,
 				08AA93652726914500AC3F8C /* CalendarCastScheduleViewController.swift in Sources */,
 				087FC87527191DFB006B50EA /* HalfSizePresentationController.swift in Sources */,
 				084A4FE2275DC11E00DB2DBF /* ProgressViewWithPanGestureViewController.swift in Sources */,
 				08AC9245275F4C2A0016ECAB /* DynamicCollectionCell.swift in Sources */,
+				08CE9FE228FE42CA0011BFA0 /* QRCodeBaseViewController.swift in Sources */,
 				086C2B5B270C0C140028022B /* ScaleViewController.swift in Sources */,
 				08AC9242275F4B320016ECAB /* DynamicCollectionViewController.swift in Sources */,
 				086C2B5C270C0C140028022B /* Fonts.swift in Sources */,

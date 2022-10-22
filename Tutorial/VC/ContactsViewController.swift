@@ -129,14 +129,14 @@ extension ContactsViewController: CNContactPickerDelegate {
             let predicate = CNContact.predicateForContacts(withIdentifiers: [contact.identifier])
             let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keysToFetch)
             guard let contact = contacts.first else { return }
-            if contact.familyName.count == 0 && contact.givenName.count == 0 {
-//                nameLabel.text = "\(contact.organizationName)"
-            } else {
-//                nameLabel.text = "\(contact.familyName)\(contact.givenName)"
-            }
+//            if contact.familyName.count == 0 && contact.givenName.count == 0 {
+//                print("\(contact.organizationName)")
+//            } else {
+//                print("\(contact.familyName)\(contact.givenName)")
+//            }
             
             if let phone = contact.phoneNumbers.first {
-//                phoneLabel.text = "\(phone.value.stringValue)"
+                print("\(contact.familyName)\(contact.givenName), \(phone.value.stringValue)")
             }
             
             

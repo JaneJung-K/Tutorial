@@ -20,7 +20,12 @@ class NewQRScanViewController: UIViewController {
         @IBAction func touchUpCloseView(_ sender: Any) {
              dismiss(animated: false, completion: nil)
         }
-        var captureSession: AVCaptureSession!
+    @IBOutlet weak var btnQR: UIButton! {
+        didSet {
+            btnQR.layer.cornerRadius = 4
+        }
+    }
+    var captureSession: AVCaptureSession!
         var previewLayer: AVCaptureVideoPreviewLayer!
         
         var qrScanningSuccess: ((String) -> Void)?

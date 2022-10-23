@@ -261,9 +261,6 @@
                                     <constraint firstItem="jsL-1g-3JR" firstAttribute="leading" secondItem="YUW-1J-YAK" secondAttribute="trailing" id="y0W-fI-LbW"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_nv_close" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-pP-tSw">
-                                <rect key="frame" x="370" y="68" width="24" height="24"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-5e-b6r">
                                 <rect key="frame" x="20" y="788" width="374" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.64705882349999999" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,28 +268,71 @@
                                     <constraint firstAttribute="height" constant="44" id="zbT-hw-X6b"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="smallSystem"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-hi-Xpy" userLabel="btnClose">
+                                <rect key="frame" x="361.5" y="14" width="52.5" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52.5" id="TDi-0k-Cra"/>
+                                    <constraint firstAttribute="height" constant="38" id="WAf-uX-HBL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ic_nv_close">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" "/>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchUpCloseView:" destination="Qsm-at-Kf2" eventType="touchUpInside" id="RVT-88-x0u"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4Yw-M6-Fb8">
+                                <rect key="frame" x="160" y="802" width="95.5" height="17"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_qr_btn" translatesAutoresizingMaskIntoConstraints="NO" id="AhX-QJ-y9o">
+                                        <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR코드 인식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOG-q4-qjz">
+                                        <rect key="frame" x="23" y="0.0" width="72.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ak3-Zr-0mR"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QX7-5e-b6r" firstAttribute="leading" secondItem="ak3-Zr-0mR" secondAttribute="leading" constant="20" id="0vR-qb-6cI"/>
                             <constraint firstItem="uZp-f8-Ag2" firstAttribute="top" secondItem="Nhd-Fx-FUm" secondAttribute="top" id="4bP-Vh-fGs"/>
-                            <constraint firstItem="kWf-pP-tSw" firstAttribute="top" secondItem="ak3-Zr-0mR" secondAttribute="top" constant="20" id="Bft-lO-yQa"/>
                             <constraint firstItem="gIZ-QH-q7m" firstAttribute="top" secondItem="uZp-f8-Ag2" secondAttribute="top" id="MIk-la-OVH"/>
                             <constraint firstItem="uZp-f8-Ag2" firstAttribute="leading" secondItem="ak3-Zr-0mR" secondAttribute="leading" id="MNR-hJ-YAv"/>
                             <constraint firstItem="ak3-Zr-0mR" firstAttribute="trailing" secondItem="uZp-f8-Ag2" secondAttribute="trailing" id="PKi-KM-1Sx"/>
+                            <constraint firstItem="4Yw-M6-Fb8" firstAttribute="centerX" secondItem="QX7-5e-b6r" secondAttribute="centerX" id="SFV-nT-Ymg"/>
                             <constraint firstItem="gIZ-QH-q7m" firstAttribute="bottom" secondItem="uZp-f8-Ag2" secondAttribute="bottom" id="WXr-If-ahb"/>
-                            <constraint firstItem="ak3-Zr-0mR" firstAttribute="trailing" secondItem="kWf-pP-tSw" secondAttribute="trailing" constant="20" id="diZ-XF-sMR"/>
+                            <constraint firstItem="ak3-Zr-0mR" firstAttribute="top" secondItem="sLM-hi-Xpy" secondAttribute="top" constant="34" id="aXQ-vI-Rxa"/>
                             <constraint firstItem="ak3-Zr-0mR" firstAttribute="trailing" secondItem="QX7-5e-b6r" secondAttribute="trailing" constant="20" id="f0x-mO-xvn"/>
                             <constraint firstAttribute="bottomMargin" secondItem="QX7-5e-b6r" secondAttribute="bottom" constant="30" id="j1w-A3-zy3"/>
                             <constraint firstItem="gIZ-QH-q7m" firstAttribute="leading" secondItem="uZp-f8-Ag2" secondAttribute="leading" id="jW2-tL-nIB"/>
                             <constraint firstItem="gIZ-QH-q7m" firstAttribute="trailing" secondItem="uZp-f8-Ag2" secondAttribute="trailing" id="k7G-Nv-FcO"/>
+                            <constraint firstItem="4Yw-M6-Fb8" firstAttribute="centerY" secondItem="QX7-5e-b6r" secondAttribute="centerY" id="pLa-lE-foI"/>
+                            <constraint firstItem="ak3-Zr-0mR" firstAttribute="trailing" secondItem="sLM-hi-Xpy" secondAttribute="trailing" id="qpX-IE-dbJ"/>
                             <constraint firstAttribute="bottom" secondItem="uZp-f8-Ag2" secondAttribute="bottom" id="zg8-DN-3g4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnQR" destination="QX7-5e-b6r" id="R2e-RZ-gDJ"/>
                         <outlet property="captureView" destination="uZp-f8-Ag2" id="qwz-Eu-Iz9"/>
                     </connections>
                 </viewController>
@@ -304,6 +344,7 @@
     <resources>
         <image name="btn_close_wt" width="14.5" height="14.5"/>
         <image name="ic_nv_close" width="24" height="24"/>
+        <image name="ic_qr_btn" width="17" height="17"/>
         <image name="ic_qr_center" width="40" height="40"/>
         <image name="ic_qr_guide" width="250" height="250"/>
         <systemColor name="systemBackgroundColor">
